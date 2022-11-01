@@ -2,10 +2,10 @@ import "./Navigation.css";
 
 function Navigation() {
   return (
-    <nav class="navbar">
-      <ul class="navbar__ul">
-        <li class="navbar_li">
-          <a class="navbar__a" href="#">
+    <nav className="navbar">
+      <ul className="navbar__ul">
+        <li className="navbar_li">
+          <a className="navbar__a" href="#">
             Quizzige Quizseite voller Quizzes
           </a>
         </li>
