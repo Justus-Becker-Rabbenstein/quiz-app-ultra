@@ -3,8 +3,16 @@
   position: static;
 }
 .navbar__ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style-type: none;
 }
 .navbar_li {
 }
-.navbar__a {
+.navbar__button {
+}
+.navbar__button__highlight {
+  background-color: greenyellow;
 }

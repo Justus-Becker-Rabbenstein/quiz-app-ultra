@@ -1,25 +1,30 @@
 import { useEffect, useState } from "react";
 import "./Card.css";
 
-function Card({clickedBoolAnswer}) {
-
+function Card({ clickedBoolAnswer }) {
   const [showAnswer, setShowAnswer] = useState(false);
+  const [buttonString, setButtonString] = useState("Show answer");
+  const [answerString, setAnswerString] = useState("card__item hide");
 
-  function trueSetter(){
-    setShowAnswer(true);
-  }
-
-  function answerRender() {
-    return <h3 className="card__item">Antwort</h3>;
-  }
-  function noRender() {
+  function buttonToggle() {
+    if (showAnswer == false) {
+      setShowAnswer(true);
+      setButtonString("Hide answer");
+      setAnswerString("card__item");
+    } else {
+      setShowAnswer(false);
+      setButtonString("Show answer");
+      setAnswerString("card__item hide");
+    }
   }
 
   return (
     <article className="card">
       <h2 className="card__item">Frage</h2>
-      <button className="card__button" onClick={trueSetter}>showAnswer</button>
-      {showAnswer == true ? console.log("test") : noRender}
+      <button className="card__button" onClick={buttonToggle}>
+        {`${buttonString}`}
+      </button>
+      <h3 className={`${answerString}`}>Teststring</h3>
     </article>
   );
 }
