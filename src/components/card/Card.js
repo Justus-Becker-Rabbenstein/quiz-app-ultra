@@ -1,11 +1,25 @@
+import { useEffect, useState } from "react";
 import "./Card.css";
 
-function Card() {
+function Card({clickedBoolAnswer}) {
+
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  function trueSetter(){
+    setShowAnswer(true);
+  }
+
+  function answerRender() {
+    return <h3 className="card__item">Antwort</h3>;
+  }
+  function noRender() {
+  }
+
   return (
     <article className="card">
-      <section className="card__item">Frage</section>
-      <button className="card__button">Antwort zeigen</button>
-      <section className="card__item">Antwort</section>
+      <h2 className="card__item">Frage</h2>
+      <button className="card__button" onClick={trueSetter}>showAnswer</button>
+      {showAnswer == true ? console.log("test") : noRender}
     </article>
   );
 }

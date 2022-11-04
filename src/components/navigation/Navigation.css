@@ -1,5 +1,6 @@
 .navbar {
   border: 3px solid black;
+  position: static;
 }
 .navbar__ul {
 }
