@@ -1,6 +1,7 @@
 .navbar {
   border: 3px solid black;
   position: static;
+  background-color: aquamarine;
 }
 .navbar__ul {
   display: flex;
@@ -12,6 +13,10 @@
 .navbar_li {
 }
 .navbar__button {
+  height: 75px;
+  width: 75px;
+  border: 1px solid black;
+  border-radius: 10%;
 }
 .navbar__button__highlight {
   background-color: greenyellow;

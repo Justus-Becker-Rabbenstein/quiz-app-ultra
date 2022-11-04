@@ -1,5 +1,9 @@
 import "./Navigation.css";
 import { useState } from "react";
+import {ReactComponent as HomeLogo} from "../../assets/images/house-user-solid.svg";
+import {ReactComponent as BookmarkLogo} from "../../assets/images/bookmark-solid.svg";
+import {ReactComponent as AddCardLogo} from "../../assets/images/file-circle-plus-solid.svg";
+import {ReactComponent as ProfileLogo} from "../../assets/images/user-solid.svg";
 
 function Navigation({ currentPage, setCurrentPage }) {
   const [classHighlighterHome, setClassHighlighterHome] = useState(
@@ -55,38 +59,19 @@ function Navigation({ currentPage, setCurrentPage }) {
 
   return (
     <nav className="navbar">
+                 
       <ul className="navbar__ul">
         <li className="navbar_li">
-          <button
-            className={`${classHighlighterHome}`}
-            onClick={siteHandlerHome}
-          >
-            Home
-          </button>
+        <HomeLogo className={`${classHighlighterHome}`} onClick={siteHandlerHome}/>
         </li>
         <li className="navbar_li">
-          <button
-            className={`${classHighlighterBookmark}`}
-            onClick={siteHandlerBookmark}
-          >
-            Bookmark
-          </button>
+          <BookmarkLogo className={`${classHighlighterBookmark}`} onClick={siteHandlerBookmark} />
         </li>
         <li className="navbar_li">
-          <button
-            className={`${classHighlighterAddCard}`}
-            onClick={siteHandlerAddCard}
-          >
-            addCard
-          </button>
+          <AddCardLogo className={`${classHighlighterAddCard}`} onClick={siteHandlerAddCard} />
         </li>
         <li className="navbar_li">
-          <button
-            className={`${classHighlighterProfile}`}
-            onClick={siteHandlerProfile}
-          >
-            Profile
-          </button>
+          <ProfileLogo className={`${classHighlighterProfile}`} onClick={siteHandlerProfile} />
         </li>
       </ul>
     </nav>
