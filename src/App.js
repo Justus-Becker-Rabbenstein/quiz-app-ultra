@@ -8,6 +8,7 @@ import { Cards } from "./pages/cards/Cards";
 import { Navigation } from "./components/navigation/Navigation";
 import { Create } from "./pages/create/Create";
 import { Profile } from "./pages/profile/Profile";
+import { Bookmark } from "./pages/bookmark/Bookmark";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -19,6 +20,7 @@ function App() {
         <Cards cards={Cards} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         <Create currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         <Profile currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Bookmark currentPage={currentPage} setCurrentPage={setCurrentPage}/>
       </main>
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>

@@ -8,7 +8,13 @@
 .card__section{
   border: 3px solid black;
 }
-
+.card__bookmark{
+  position: relative;
+  top: 0%;
+  right: -46%;
+  height: 55px;
+  width: 55px;
+}
 .hide {
   display: none;
 }

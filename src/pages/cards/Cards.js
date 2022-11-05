@@ -1,5 +1,6 @@
 import './Cards.css';
-import {Card} from "../../components/card/Card";
+import { Card } from "../../components/card/Card";
+import { Bookmark } from "../bookmark/Bookmark";
 import { useState } from 'react';
 
 export function Cards ({currentPage, setCurrentPage}) {
@@ -9,7 +10,7 @@ const [cardsArray, setCardsArray] = useState([
         id: "0",
         question: "What does the fox say?",
         answer: "Banana.",
-        isBookmarked: false,
+        isBookmarked: true,
         hideAnswer: "card__item hide",
         showAnswer: "card__item"
     },
@@ -25,7 +26,7 @@ const [cardsArray, setCardsArray] = useState([
         id: "2",
         question: "Cheeseburger oder Pommes?",
         answer: "Cheesepommes.",
-        isBookmarked: false,
+        isBookmarked: true,
         hideAnswer: "card__item hide",
         showAnswer: "card__item"
     },
@@ -48,11 +49,6 @@ const [cardsArray, setCardsArray] = useState([
 ]);
 
 if (currentPage === "Home") { 
-    return <Card cardsArray={cardsArray} setCardsArray={setCardsArray}/>
+    return <Card cardsArray={cardsArray} setCardsArray={setCardsArray} />
     }
-/*     return cardsArray.map(function(parameter) {
-        return (
-        <Card>parameter.question</Card>
-        );
-    }) */
 }
