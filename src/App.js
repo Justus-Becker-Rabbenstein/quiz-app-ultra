@@ -4,8 +4,10 @@ import { useState } from "react";
 import "./App.css";
 //Components
 import { Header } from "./components/header/Header";
-import { Card } from "./components/card/Card";
+import { Cards } from "./pages/cards/Cards";
 import { Navigation } from "./components/navigation/Navigation";
+import { Create } from "./pages/create/Create";
+import { Profile } from "./pages/profile/Profile";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -14,9 +16,9 @@ function App() {
     <div className="App">
       <Header />
       <main className="app__main">
-        <Card />
-        <Card />
-        <Card />
+        <Cards cards={Cards} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Create currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Profile currentPage={currentPage} setCurrentPage={setCurrentPage}/>
       </main>
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>

@@ -1,30 +1,33 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Cards } from "../../pages/cards/Cards";
 import "./Card.css";
 
-function Card({ clickedBoolAnswer }) {
+function Card({ clickedBoolAnswer,}) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [buttonString, setButtonString] = useState("Show answer");
-  const [answerString, setAnswerString] = useState("card__item hide");
+  const [answerToggleClass, setAnswerToggleClass] = useState("card__item hide");
 
   function buttonToggle() {
-    if (showAnswer == false) {
+    if (showAnswer === false) {
       setShowAnswer(true);
       setButtonString("Hide answer");
-      setAnswerString("card__item");
+      setAnswerToggleClass("card__item");
     } else {
       setShowAnswer(false);
       setButtonString("Show answer");
-      setAnswerString("card__item hide");
+      setAnswerToggleClass("card__item hide");
     }
   }
 
+  const questionString = "";
+
   return (
     <article className="card">
-      <h2 className="card__item">Frage</h2>
+      <h2 className="card__item">{`${questionString}`}</h2>
       <button className="card__button" onClick={buttonToggle}>
         {`${buttonString}`}
       </button>
-      <h3 className={`${answerString}`}>Teststring</h3>
+      <h3 className={`${answerToggleClass}`}>Teststring</h3>
     </article>
   );
 }
