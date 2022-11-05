@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Cards } from "../../pages/cards/Cards";
 import "./Card.css";
 
-function Card({ clickedBoolAnswer,}) {
+function Card({ clickedBoolAnswer, cardsArray, setCardsArray}) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [buttonString, setButtonString] = useState("Show answer");
   const [answerToggleClass, setAnswerToggleClass] = useState("card__item hide");
@@ -19,15 +18,19 @@ function Card({ clickedBoolAnswer,}) {
     }
   }
 
-  const questionString = "";
-
   return (
     <article className="card">
-      <h2 className="card__item">{`${questionString}`}</h2>
+      {cardsArray.map((p1) => 
+      <>
+      <section className="card__section">
+      <h2 className="card__item">{p1.question}</h2>
       <button className="card__button" onClick={buttonToggle}>
         {`${buttonString}`}
       </button>
-      <h3 className={`${answerToggleClass}`}>Teststring</h3>
+      <h3 className={`${answerToggleClass}`}>{p1.answer}</h3>
+      </section>
+      </>
+      )}
     </article>
   );
 }
