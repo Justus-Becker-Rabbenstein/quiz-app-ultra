@@ -3,7 +3,7 @@ import {ReactComponent as BookmarkLogoEmpty} from "../../assets/images/bookmark-
 import {ReactComponent as BookmarkLogoFull} from "../../assets/images/bookmark-solid.svg";
 import "./Card.css";
 
-function Card({ clickedBoolAnswer, cardsArray, setCardsArray}) {
+function Card({ clickedBoolAnswer, cardsArray, setCardsArray, key}) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [buttonString, setButtonString] = useState("Show answer");
 

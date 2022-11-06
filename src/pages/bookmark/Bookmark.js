@@ -1,8 +1,25 @@
+import { useState } from 'react'
+import { Cards } from "../cards/Cards";
 import './Bookmark.css'
 
-export function Bookmark({currentPage, setCurrentPage, cardsArray, setCardsArray}){
+function Bookmark({currentPage, setCurrentPage, cardsArray, varName}){
 
-    if (currentPage === "Bookmark") { 
+    const [filteredArray, setFilteredArray] = useState([]);
 
+    function ffArray () {
+/*         setFilteredArray(cardsArray.filter((p1) => cardsArray.isBookmarked === true)); */
+        console.log(varName);
+    }
+
+    if (currentPage === "Bookmark") {
+        return ( 
+            <>
+        <article className="card">
+            <button onClick={ffArray}>Test</button>
+        </article>
+        </>
+        )
     }
 }
+
+export { Bookmark }

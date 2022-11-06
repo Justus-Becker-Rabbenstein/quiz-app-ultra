@@ -49,6 +49,10 @@ const [cardsArray, setCardsArray] = useState([
 ]);
 
 if (currentPage === "Home") { 
-    return <Card cardsArray={cardsArray} setCardsArray={setCardsArray} />
+    return (
+    <>
+    <Card cardsArray={cardsArray} setCardsArray={setCardsArray} key={cardsArray.id} />
+    </>
+    )
     }
 }
