@@ -32,7 +32,7 @@ const BookmarkCard = ({currentPage, setCurrentPage, cardsArray, setCardsArray, k
       <button className="card__button" onClick={buttonToggle}>
         {`${buttonString}`}
       </button>
-      <h3 className={showAnswer ? p1.showAnswer : p1.hideAnswer}>{p1.answer}</h3>
+      <h3 className={showAnswer ? "card__item" : "card__item hide"}>{p1.answer}</h3>
       </section>
       </>
       )}
