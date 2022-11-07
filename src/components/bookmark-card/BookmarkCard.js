@@ -8,7 +8,6 @@ const BookmarkCard = ({currentPage, setCurrentPage, cardsArray, setCardsArray, k
 
     const [showAnswer, setShowAnswer] = useState(false);
     const [buttonString, setButtonString] = useState("Show answer");
-    const [filterArray, setfilteredArray] = useState([]);
   
     function buttonToggle() {
       if (showAnswer === false) {
@@ -20,9 +19,12 @@ const BookmarkCard = ({currentPage, setCurrentPage, cardsArray, setCardsArray, k
       }
     }
 
+    const result = cardsArray.filter((p1) => p1.isBookmarked);
+
   return (
     <article className="card">
-      {cardsArray.map((p1, p2) => 
+    {console.log(result)}
+      {result.map((p1, p2) => 
       <>
       <section className="card__section">
       {p1.isBookmarked ? <BookmarkLogoFull className="card__bookmark" /> : <BookmarkLogoEmpty className="card__bookmark"/>}
