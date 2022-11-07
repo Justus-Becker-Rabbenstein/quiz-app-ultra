@@ -12,6 +12,48 @@ import { Bookmark } from "./pages/bookmark/Bookmark";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("Home");
+  const [cardsArray, setCardsArray] = useState([
+    {
+      id: "0",
+      question: "What does the fox say?",
+      answer: "Banana.",
+      isBookmarked: true,
+      hideAnswer: "card__item hide",
+      showAnswer: "card__item",
+    },
+    {
+      id: "1",
+      question: "To be or not to be?",
+      answer: "To be.",
+      isBookmarked: false,
+      hideAnswer: "card__item hide",
+      showAnswer: "card__item",
+    },
+    {
+      id: "2",
+      question: "Cheeseburger oder Pommes?",
+      answer: "Cheesepommes.",
+      isBookmarked: true,
+      hideAnswer: "card__item hide",
+      showAnswer: "card__item",
+    },
+    {
+      id: "3",
+      question: "Was ist der Sinn des Lebens?",
+      answer: "Pommes.",
+      isBookmarked: false,
+      hideAnswer: "card__item hide",
+      showAnswer: "card__item",
+    },
+    {
+      id: "4",
+      question: "Welche Farbe hat eine Zitrone?",
+      answer: "Gelb.",
+      isBookmarked: false,
+      hideAnswer: "card__item hide",
+      showAnswer: "card__item",
+    },
+  ]);
 
   return (
     <div className="App">
@@ -22,12 +64,20 @@ function App() {
             cards={Cards}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
+            cardsArray={cardsArray}
+            setCardsArray={setCardsArray}
+            key={cardsArray.id}
           />
         ) : (
           ""
         )}
         {currentPage === "Bookmark" ? (
-          <Bookmark currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <Bookmark 
+          currentPage={currentPage} 
+          setCurrentPage={setCurrentPage} 
+          cardsArray={cardsArray} 
+          setCardsArray={setCardsArray} 
+          key={cardsArray.id} />
         ) : (
           ""
         )}

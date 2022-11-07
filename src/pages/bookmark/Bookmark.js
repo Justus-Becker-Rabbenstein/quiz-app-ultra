@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { Cards } from "../cards/Cards";
+import BookmarkCard from "../../components/bookmark-card/BookmarkCard";
 import "./Bookmark.css";
 
-function Bookmark({ currentPage, setCurrentPage, cardsArray, varName }) {
-  const [filteredArray, setFilteredArray] = useState([]);
-
-  return <Cards />;
+function Bookmark({ currentPage, setCurrentPage, cardsArray, setCardsArray, key}) {
+  return <BookmarkCard           
+  currentPage={currentPage} 
+  setCurrentPage={setCurrentPage} 
+  cardsArray={cardsArray} 
+  setCardsArray={setCardsArray} 
+  key={key} />
 }
 
 export { Bookmark };
