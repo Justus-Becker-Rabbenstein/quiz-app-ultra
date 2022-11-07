@@ -15,14 +15,34 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <main className="app__main">
-        <Cards cards={Cards} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-        <Create currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-        <Profile currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-        <Bookmark currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Header />
+        {currentPage === "Home" ? (
+          <Cards
+            cards={Cards}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        ) : (
+          ""
+        )}
+        {currentPage === "Bookmark" ? (
+          <Bookmark currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        ) : (
+          ""
+        )}
+        {currentPage === "addCard" ? (
+          <Create currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        ) : (
+          ""
+        )}
+        {currentPage === "Profile" ? (
+          <Profile currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        ) : (
+          ""
+        )}
+        <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </main>
-      <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>
   );
 }
