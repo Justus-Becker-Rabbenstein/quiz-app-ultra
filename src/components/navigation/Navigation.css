@@ -1,23 +1,30 @@
 .navbar {
   border: 3px solid black;
   position: static;
-  background-color: aquamarine;
+  background-color: goldenrod;
+  height: 100%;
+  width: 100%;
 }
 .navbar__ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  min-height: 100%;
+  position: sticky;
+  bottom: 0;
 }
 .navbar_li {
+  height: 100%;
+  width: 100%;
+  background-color: gold;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
 }
 .navbar__button {
   height: 75px;
-  width: 75px;
-  border: 1px solid black;
-  border-radius: 10%;
+  width: 100%;
 }
 .navbar__button__highlight {
-  background-color: greenyellow;
+  background-color: goldenrod;
 }

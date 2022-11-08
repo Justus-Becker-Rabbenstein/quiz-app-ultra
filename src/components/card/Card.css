@@ -1,14 +1,13 @@
 .card {
-  border: 3px solid black;
 }
 .card__item {
 }
 .card_button {
 }
-.card__section{
-  border: 3px solid black;
+.card__section {
+  border: 1px outset grey;
 }
-.card__bookmark{
+.card__bookmark {
   position: relative;
   top: 0%;
   right: -46%;
