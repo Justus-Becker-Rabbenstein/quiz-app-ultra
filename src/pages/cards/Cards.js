@@ -9,8 +9,18 @@ export function Cards({
   cardsArray,
   setCardsArray,
   key,
+  returnCard,
 }) {
   return (
-    <Card cardsArray={cardsArray} setCardsArray={setCardsArray} key={key} />
+    <>
+      {console.log(cardsArray)}
+      {cardsArray.map((card) => (
+        <Card
+          cardQuestion={card.question}
+          cardAnswer={card.answer}
+          isBookmarked={card.isBookmarked}
+        />
+      ))}
+    </>
   );
 }
