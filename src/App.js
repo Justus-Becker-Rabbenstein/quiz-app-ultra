@@ -1,5 +1,5 @@
 //Librarays
-import { useState } from "react";
+import { useState, useContext } from "react";
 //CSS
 import "./App.css";
 //Components
@@ -9,6 +9,8 @@ import { Navigation } from "./components/navigation/Navigation";
 import { Create } from "./pages/create/Create";
 import { Profile } from "./pages/profile/Profile";
 import { Bookmark } from "./pages/bookmark/Bookmark";
+import { GlobalState } from "./context/GlobalState";
+import { GlobalStateContext } from "./context/GlobalState";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -48,40 +50,49 @@ function App() {
   return (
     <div className="App">
       <main className="app__main">
-        <Header />
-        {currentPage === "Home" ? (
-          <Cards
-            cards={Cards}
+        <GlobalState>
+          <Header />
+          {currentPage === "Home" ? (
+            <Cards
+              cards={Cards}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              cardsArray={cardsArray}
+              setCardsArray={setCardsArray}
+              key={cardsArray.id}
+            />
+          ) : (
+            ""
+          )}
+          {currentPage === "Bookmark" ? (
+            <Bookmark
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              cardsArray={cardsArray}
+              setCardsArray={setCardsArray}
+              key={cardsArray.id}
+            />
+          ) : (
+            ""
+          )}
+          {currentPage === "addCard" ? (
+            <Create currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          ) : (
+            ""
+          )}
+          {currentPage === "Profile" ? (
+            <Profile
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
+          ) : (
+            ""
+          )}
+          <Navigation
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
-            cardsArray={cardsArray}
-            setCardsArray={setCardsArray}
-            key={cardsArray.id}
           />
-        ) : (
-          ""
-        )}
-        {currentPage === "Bookmark" ? (
-          <Bookmark 
-          currentPage={currentPage} 
-          setCurrentPage={setCurrentPage} 
-          cardsArray={cardsArray} 
-          setCardsArray={setCardsArray} 
-          key={cardsArray.id} />
-        ) : (
-          ""
-        )}
-        {currentPage === "addCard" ? (
-          <Create currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        ) : (
-          ""
-        )}
-        {currentPage === "Profile" ? (
-          <Profile currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        ) : (
-          ""
-        )}
-        <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        </GlobalState>
       </main>
     </div>
   );
